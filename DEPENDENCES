@@ -1,0 +1,23 @@
+Hello, I'm ars, I'll tell you that to test my fetch you need the following libraries:
+
+platform
+psutil
+OS Module
+datetime
+cpuinfo
+shellingham
+
+
+You can install the libraries with the following commands:
+
+
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+pip3 install psutil
+pip3 install py-cpuinfo
+pip3 install shellingham
+
+Some modules come pre-installed with Python, such as the platform module, os, and the datetime module, so there's no need to install them.
+
+I hope you enjoy my fetch and support this low-level developer in their projects, I will update it soon! Goodbye!
