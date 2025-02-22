@@ -61,7 +61,7 @@ def uptime():
 time = uptime()
 
 print("Uptime:", time)
-print("Name with system:", platform.node())
+print("System name:", platform.node())
 print("Operating system:", platform.system())
 print("Machine type:", platform.machine())
 print("Kernel or version with system:", platform.platform())
