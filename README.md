@@ -9,7 +9,7 @@ Hello, I'm ars, I'll tell you that to test my fetch you need the following libra
 - OS Module
 - datetime
 - cpuinfo
- shellingham
+ and shellingham
 
 
 You can install the libraries with the following commands:
