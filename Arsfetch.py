@@ -4,6 +4,8 @@ import os
 import datetime
 import cpuinfo
 import shellingham
+import time
+import subprocess
 
 
 def portada():
@@ -58,9 +60,10 @@ def uptime():
 
     return resultado
 
-time = uptime()
+otime = uptime()
 
-print("Uptime:", time)
+print("Uptime:", otime)
+print("Date", time.strftime("%Y-%m-%d  Time:%H:%M:%S"))
 print("System name:", platform.node())
 print("Operating system:", platform.system())
 print("Machine type:", platform.machine())
@@ -89,7 +92,9 @@ try:
 except Exception as e:
 	print(f"Error: {e}")
 
-
+temps = psutil.sensors_temperatures()
+valores = [t.current for sensor in temps.values() for t in sensor]
+print(f"CPU temperature: {max(valores)}°C ")
 
 try:
     shell = shellingham.detect_shell()
@@ -97,6 +102,11 @@ except shellingham.ShellDetectionFailure:
     shell = provide_default()
 
 print("Bash or Shell:", shell)
+
+bateria = psutil.sensors_battery()
+if bateria:
+    print(f"Percent: {bateria.percent}% | Connected to the power (or energy): {'yes' if bateria.power_plugged else 'no'}")
+
 
 print("Bye bye :) ")
 
